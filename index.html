@@ -12,7 +12,7 @@
             justify-content: center;
             height: 100vh;
             margin: 0;
-            background-color: pink; /* Fondo rosa */
+            background-color: #f0f0f0; /* Color de fondo original */
         }
         #chatbot-container {
             display: flex;
@@ -40,7 +40,13 @@
                 var chat = window.voiceflow.chat.load({
                     verify: { projectID: '667327a274ff7132652bcc36' },
                     url: 'https://general-runtime.voiceflow.com',
-                    versionID: 'production'
+                    versionID: 'production',
+                    open: true, // Abrir el chat automáticamente
+                    config: {
+                        sideSpacing: 24, // Espaciado lateral
+                        bottomSpacing: 24, // Espaciado inferior
+                        mainColor: '#3672F7' // Color principal del chat
+                    }
                 });
                 chat.then(function(instance) {
                     instance.openChat(); // Forzar la apertura del chat
@@ -53,6 +59,4 @@
     </script>
 </body>
 </html>
-
-
 
