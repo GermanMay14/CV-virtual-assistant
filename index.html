@@ -28,7 +28,8 @@
             height: 100%;
         }
     </style>
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.voiceflow.com;">
+    <!-- Ajuste temporal de CSP para permitir eval -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-eval' https://cdn.voiceflow.com;">
 </head>
 <body>
     <div id="chatbot-container">
@@ -43,13 +44,6 @@
                     url: 'https://general-runtime.voiceflow.com',
                     versionID: 'production',
                     open: true // Intentar abrir el chat automáticamente
-                }).then(function(instance) {
-                    console.log('Voiceflow chat loaded successfully:', instance);
-                    if (instance && typeof instance.openChat === 'function') {
-                        instance.openChat(); // Forzar la apertura del chat
-                    } else {
-                        console.error('Instance or openChat method is not defined');
-                    }
                 }).catch(function(error) {
                     console.error('Error loading Voiceflow chat:', error);
                 });
@@ -61,6 +55,7 @@
     </script>
 </body>
 </html>
+
 
 
 
