@@ -4,9 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chatbot</title>
+    <style>
+        /* Estilo adicional para centrar el chatbot */
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0; /* Color de fondo opcional */
+        }
+        #chatbot {
+            width: 100%;
+            max-width: 600px; /* Ancho máximo del chatbot */
+        }
+    </style>
 </head>
 <body>
-    <h1>Welcome to my Chatbot</h1>
+    <!-- No hay mensaje inicial -->
     <div id="chatbot"></div>
     <script type="text/javascript">
         (function(d, t) {
@@ -15,7 +31,8 @@
                 window.voiceflow.chat.load({
                     verify: { projectID: '667327a274ff7132652bcc36' },
                     url: 'https://general-runtime.voiceflow.com',
-                    versionID: 'production'
+                    versionID: 'production',
+                    open: true // Configuración para abrir el chat automáticamente
                 });
             }
             v.src = "https://cdn.voiceflow.com/widget/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
@@ -23,4 +40,3 @@
     </script>
 </body>
 </html>
-
