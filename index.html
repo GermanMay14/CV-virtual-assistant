@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chatbot</title>
     <style>
+        /* Estilo adicional para centrar el chatbot */
         body {
             display: flex;
             flex-direction: column;
@@ -12,28 +13,18 @@
             justify-content: center;
             height: 100vh;
             margin: 0;
-            background-color: #f0f0f0; /* Color de fondo original */
-        }
-        #chatbot-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            width: 100%;
-            max-width: 600px;
-            height: 100%;
+            background-color: #f0f0f0; /* Color de fondo opcional */
         }
         #chatbot {
             width: 100%;
-            height: 100%;
+            max-width: 600px; /* Ancho máximo del chatbot */
         }
     </style>
 </head>
 <body>
-    <div id="chatbot-container">
-        <div id="chatbot"></div>
-    </div>
-    <script>
+    <!-- No hay mensaje inicial -->
+    <div id="chatbot"></div>
+    <script type="text/javascript">
         (function(d, t) {
             var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
             v.onload = function() {
@@ -41,20 +32,15 @@
                     verify: { projectID: '667327a274ff7132652bcc36' },
                     url: 'https://general-runtime.voiceflow.com',
                     versionID: 'production',
-                    open: true // Intentar abrir el chat automáticamente
-                }).then(function(instance) {
-                    console.log('Voiceflow chat loaded successfully:', instance);
-                }).catch(function(error) {
-                    console.error('Error loading Voiceflow chat:', error);
+                    open: true // Configuración para abrir el chat automáticamente
                 });
-            };
-            v.src = "https://cdn.voiceflow.com/widget/bundle.mjs";
-            v.type = "text/javascript";
-            s.parentNode.insertBefore(v, s);
+            }
+            v.src = "https://cdn.voiceflow.com/widget/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
         })(document, 'script');
     </script>
 </body>
 </html>
+
 
 
 
