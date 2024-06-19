@@ -28,6 +28,7 @@
             height: 100%;
         }
     </style>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.voiceflow.com;">
 </head>
 <body>
     <div id="chatbot-container">
@@ -40,7 +41,8 @@
                 window.voiceflow.chat.load({
                     verify: { projectID: '667327a274ff7132652bcc36' },
                     url: 'https://general-runtime.voiceflow.com',
-                    versionID: 'production'
+                    versionID: 'production',
+                    open: true // Intentar abrir el chat automáticamente
                 }).then(function(instance) {
                     console.log('Voiceflow chat loaded successfully:', instance);
                     if (instance && typeof instance.openChat === 'function') {
@@ -59,6 +61,7 @@
     </script>
 </body>
 </html>
+
 
 
 
