@@ -12,7 +12,7 @@
             justify-content: center;
             height: 100vh;
             margin: 0;
-            background-color: #f0f0f0;
+            background-color: pink; /* Fondo rosa */
         }
         #chatbot-container {
             display: flex;
@@ -42,6 +42,8 @@
                     url: 'https://general-runtime.voiceflow.com',
                     versionID: 'production',
                     open: true // Abrir el chat automáticamente
+                }).then(function(instance) {
+                    instance.openChat(); // Forzar la apertura del chat
                 });
             };
             v.src = "https://cdn.voiceflow.com/widget/bundle.mjs";
@@ -51,5 +53,6 @@
     </script>
 </body>
 </html>
+
 
 
