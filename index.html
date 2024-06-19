@@ -37,12 +37,12 @@
         (function(d, t) {
             var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
             v.onload = function() {
-                window.voiceflow.chat.load({
+                var chat = window.voiceflow.chat.load({
                     verify: { projectID: '667327a274ff7132652bcc36' },
                     url: 'https://general-runtime.voiceflow.com',
-                    versionID: 'production',
-                    open: true // Abrir el chat automáticamente
-                }).then(function(instance) {
+                    versionID: 'production'
+                });
+                chat.then(function(instance) {
                     instance.openChat(); // Forzar la apertura del chat
                 });
             };
