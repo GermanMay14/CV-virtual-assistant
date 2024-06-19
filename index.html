@@ -6,20 +6,22 @@
     <title>Chatbot</title>
     <style>
         body {
-            background-color: #f0f0f0; /* Color de fondo original */
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
+            justify-content: center;
             height: 100vh;
             margin: 0;
+            background-color: #f0f0f0; /* Color de fondo original */
         }
         #chatbot-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
             width: 100%;
             max-width: 600px;
             height: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
         }
         #chatbot {
             width: 100%;
@@ -41,7 +43,11 @@
                     versionID: 'production',
                     open: true // Intentar abrir el chat automáticamente
                 }).then(function(instance) {
-                    instance.openChat(); // Forzar la apertura del chat
+                    if (instance && instance.openChat) {
+                        instance.openChat(); // Forzar la apertura del chat
+                    } else {
+                        console.error('Instance or openChat method is not defined');
+                    }
                 }).catch(function(error) {
                     console.error('Error loading Voiceflow chat:', error);
                 });
@@ -53,4 +59,5 @@
     </script>
 </body>
 </html>
+
 
