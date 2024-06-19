@@ -43,6 +43,7 @@
                     versionID: 'production',
                     open: true, // Abrir el chat automáticamente
                     config: {
+                        position: 'center', // Intentar centrar el chat
                         sideSpacing: 24, // Espaciado lateral
                         bottomSpacing: 24, // Espaciado inferior
                         mainColor: '#3672F7' // Color principal del chat
@@ -50,6 +51,8 @@
                 });
                 chat.then(function(instance) {
                     instance.openChat(); // Forzar la apertura del chat
+                }).catch(function(error) {
+                    console.error('Error loading Voiceflow chat:', error);
                 });
             };
             v.src = "https://cdn.voiceflow.com/widget/bundle.mjs";
