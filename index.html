@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chatbot</title>
     <style>
-        /* Estilo adicional para centrar el chatbot */
         body {
             display: flex;
             flex-direction: column;
@@ -13,16 +12,15 @@
             justify-content: center;
             height: 100vh;
             margin: 0;
-            background-color: #f0f0f0; /* Color de fondo opcional */
+            background-color: #f0f0f0;
         }
         #chatbot {
             width: 100%;
-            max-width: 600px; /* Ancho máximo del chatbot */
+            max-width: 600px;
         }
     </style>
 </head>
 <body>
-    <!-- No hay mensaje inicial -->
     <div id="chatbot"></div>
     <script type="text/javascript">
         (function(d, t) {
@@ -32,7 +30,13 @@
                     verify: { projectID: '667327a274ff7132652bcc36' },
                     url: 'https://general-runtime.voiceflow.com',
                     versionID: 'production',
-                    open: true // Configuración para abrir el chat automáticamente
+                    open: true, // Abrir el chat automáticamente
+                    config: {
+                        welcome: true, // Mostrar mensaje de bienvenida
+                        screen: {
+                            position: 'center' // Centrar el chat
+                        }
+                    }
                 });
             }
             v.src = "https://cdn.voiceflow.com/widget/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
@@ -40,3 +44,4 @@
     </script>
 </body>
 </html>
+
