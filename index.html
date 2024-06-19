@@ -6,22 +6,20 @@
     <title>Chatbot</title>
     <style>
         body {
+            background-color: #f0f0f0; /* Color de fondo original */
             display: flex;
-            flex-direction: column;
-            align-items: center;
             justify-content: center;
+            align-items: center;
             height: 100vh;
             margin: 0;
-            background-color: #f0f0f0; /* Color de fondo original */
         }
         #chatbot-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
             width: 100%;
             max-width: 600px;
             height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
         #chatbot {
             width: 100%;
@@ -33,23 +31,16 @@
     <div id="chatbot-container">
         <div id="chatbot"></div>
     </div>
-    <script type="text/javascript">
+    <script>
         (function(d, t) {
             var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
             v.onload = function() {
-                var chat = window.voiceflow.chat.load({
+                window.voiceflow.chat.load({
                     verify: { projectID: '667327a274ff7132652bcc36' },
                     url: 'https://general-runtime.voiceflow.com',
                     versionID: 'production',
-                    open: true, // Abrir el chat automáticamente
-                    config: {
-                        position: 'center', // Intentar centrar el chat
-                        sideSpacing: 24, // Espaciado lateral
-                        bottomSpacing: 24, // Espaciado inferior
-                        mainColor: '#3672F7' // Color principal del chat
-                    }
-                });
-                chat.then(function(instance) {
+                    open: true // Intentar abrir el chat automáticamente
+                }).then(function(instance) {
                     instance.openChat(); // Forzar la apertura del chat
                 }).catch(function(error) {
                     console.error('Error loading Voiceflow chat:', error);
