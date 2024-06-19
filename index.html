@@ -15,6 +15,11 @@
             margin: 0;
             background-color: #f0f0f0; /* Color de fondo opcional */
         }
+        #message {
+            margin-bottom: 20px;
+            font-size: 1.5em;
+            text-align: center;
+        }
         #chatbot {
             width: 100%;
             max-width: 600px; /* Ancho máximo del chatbot */
@@ -22,7 +27,7 @@
     </style>
 </head>
 <body>
-    <!-- No hay mensaje inicial -->
+    <div id="message">Haz click en la burbuja para iniciar el chatbot</div>
     <div id="chatbot"></div>
     <script type="text/javascript">
         (function(d, t) {
@@ -40,6 +45,7 @@
     </script>
 </body>
 </html>
+
 
 
 
