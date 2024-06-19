@@ -5,22 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chatbot</title>
     <style>
-        /* Estilo adicional para centrar el chatbot */
         body {
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
+            justify-content: flex-start; /* Asegura que el mensaje esté en la parte superior */
             height: 100vh;
             margin: 0;
-            background-color: #f0f0f0; /* Color de fondo opcional */
+            background-color: #f0f0f0;
+            text-align: center; /* Centro el texto del mensaje */
         }
         #message {
-            margin-bottom: 20px;
+            margin-top: 20px; /* Espacio superior para separar el mensaje del borde superior */
             font-size: 1.5em;
             text-align: center;
         }
         #chatbot {
+            margin-top: 20px; /* Espacio superior para separar el chatbot del mensaje */
             width: 100%;
             max-width: 600px; /* Ancho máximo del chatbot */
         }
@@ -38,9 +39,15 @@
                     url: 'https://general-runtime.voiceflow.com',
                     versionID: 'production',
                     open: true // Configuración para abrir el chat automáticamente
+                }).then(function(instance) {
+                    console.log('Voiceflow chat loaded successfully:', instance);
+                }).catch(function(error) {
+                    console.error('Error loading Voiceflow chat:', error);
                 });
-            }
-            v.src = "https://cdn.voiceflow.com/widget/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
+            };
+            v.src = "https://cdn.voiceflow.com/widget/bundle.mjs";
+            v.type = "text/javascript";
+            s.parentNode.insertBefore(v, s);
         })(document, 'script');
     </script>
 </body>
