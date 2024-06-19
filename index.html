@@ -14,14 +14,25 @@
             margin: 0;
             background-color: #f0f0f0;
         }
-        #chatbot {
+        #chatbot-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
             width: 100%;
             max-width: 600px;
+            height: 100%;
+        }
+        #chatbot {
+            width: 100%;
+            height: 100%;
         }
     </style>
 </head>
 <body>
-    <div id="chatbot"></div>
+    <div id="chatbot-container">
+        <div id="chatbot"></div>
+    </div>
     <script type="text/javascript">
         (function(d, t) {
             var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
@@ -30,18 +41,15 @@
                     verify: { projectID: '667327a274ff7132652bcc36' },
                     url: 'https://general-runtime.voiceflow.com',
                     versionID: 'production',
-                    open: true, // Abrir el chat automáticamente
-                    config: {
-                        welcome: true, // Mostrar mensaje de bienvenida
-                        screen: {
-                            position: 'center' // Centrar el chat
-                        }
-                    }
+                    open: true // Abrir el chat automáticamente
                 });
-            }
-            v.src = "https://cdn.voiceflow.com/widget/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
+            };
+            v.src = "https://cdn.voiceflow.com/widget/bundle.mjs";
+            v.type = "text/javascript";
+            s.parentNode.insertBefore(v, s);
         })(document, 'script');
     </script>
 </body>
 </html>
+
 
